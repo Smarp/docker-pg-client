@@ -1,11 +1,13 @@
-FROM ubuntu:14.04
-MAINTAINER Kevin Ellis
-
-ENV LAST_MODIFIED "2014-10-26 K Ellis"
+FROM debian:jessie
+MAINTAINER TruongSinh Tran-Nguyen <truongsinh@smarp.com>
 
 RUN apt-get update
-RUN apt-get install postgresql-client-9.3 -y
+RUN apt-get install postgresql-client-9.4 -y
 RUN apt-get upgrade bash -y
 RUN apt-get install telnet -y
 
-CMD ["/bin/bash"]
+ENV PGHOST=postgres
+ENV PGUSER=postgres
+ENV PGSSLMODE=disable
+
+CMD ["/usr/bin/psql"]
