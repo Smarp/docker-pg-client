@@ -7,7 +7,7 @@ RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys B97
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc/apt/sources.list.d/pgdg.list
 
 RUN apt-get update
-RUN apt-get install postgresql-client-9.5 git -y
+RUN apt-get install postgresql-client-9.6 git -y
 RUN apt-get upgrade bash -y
 
 ENV PGHOST=postgres
